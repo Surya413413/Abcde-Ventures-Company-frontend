@@ -1,0 +1,269 @@
+.form-card {
+  /* size/layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50vh;
+  margin: 0 auto;
+  padding: clamp(20px, 4vw, 36px);
+  border-radius: 20px;
+  border-color: red solid 2px;
+
+
+  /* glass base */
+  /* background: linear-gradient(to bottom, #3e0468, #6632c0, #8481e9); */
+    background: linear-gradient(135deg, rgba(76, 0, 130, 0.9), rgba(138, 43, 226, 0.9));
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+
+  /* outline + inner glow */
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+
+  /* text color for dark BGs */
+  color: rgba(255,255,255,0.95);
+}
+
+
+
+
+
+
+
+/* Base wrapper (from earlier) */
+.field {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+}
+
+/* Input with left icon and room for right toggle */
+.field__input {
+  width: 100%;
+  height: 56px;
+  box-sizing: border-box;
+  padding: 0 38px;          /* right padding for toggle */
+  padding-left: 56px;       /* left icon space */
+  border-radius: 16px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  color: #e5e7eb;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s, background-color .2s;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+}
+.field__input::placeholder { color: rgba(226,232,240,0.7); }
+.field__input:hover { border-color: rgba(255,255,255,0.28); }
+.field__input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.35), inset 0 1px 0 rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.10);
+}
+
+/* Left icon (lock) */
+.field__icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  pointer-events: none;
+ 
+  
+}
+.field__icon_svg {
+  width: 20px;
+  height: 20px;
+  color: #fefafa; /* slightly dim by default */
+  transition: color 0.3s, filter 0.3s;
+}
+
+.field:focus-within .field__icon_svg {
+  color: #ffffff;  /* pure white on focus */
+  filter: drop-shadow(0 0 6px #ffffff); /* glowing effect */
+}
+
+
+/* Right-side toggle button */
+.field__toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 32px;
+  width: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #a5b4fc;               /* violet-200/300-ish */
+  cursor: pointer;
+  padding: 0;
+}
+.field__toggle:hover { color: #c4b5fd; }
+.field__toggle:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+/* Toggle icons: show one at a time */
+.field__toggle-svg { width: 20px; height: 20px; }
+.field__toggle--hide { display: none; }   /* default: show 'Eye' for hidden password */
+
+/* When password is visible (wrapper NOT is-hidden), swap icons */
+.field:not(.is-hidden) .field__toggle--show { display: none; }
+.field:not(.is-hidden) .field__toggle--hide { display: inline; }
+
+
+
+.emailfiledrender{
+    margin: 10px;
+}
+
+.passwordfiledrender{
+    margin: 10px;
+}
+
+.buttonsgin {
+height: 64px;                   
+  /* border-radius: 10000000px;           */
+  padding: 0 28px;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 300px;
+
+  /* gradient colors directly */
+  background-image: linear-gradient(90deg, #2563eb, #8b5cf6); 
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+
+  color: #fff;
+  font: 600 18px/1.1 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial;
+  letter-spacing: .2px;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-position .5s ease, transform .15s ease;
+  box-shadow:
+    0 18px 40px rgba(109, 40, 217, 0.35),
+    inset 0 1px 0 rgba(255,255,255,0.35);
+}
+
+/* Subtle sheen overlay */
+.buttonsgin::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,0) 40%);
+  mix-blend-mode: screen;
+}
+
+/* Hover/focus states */
+.buttonsgin:hover,
+.buttonsgin:focus-visible {
+  background-position: 100% 50%;             /* slide gradient right for liveliness */
+  outline: 0;
+  transform: translateY(-1px);
+}
+
+/* Pressed */
+.buttonsgin:active {
+  transform: translateY(0);
+  box-shadow:
+    0 10px 24px rgba(109, 40, 217, 0.30),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
+/* Icon nudge */
+.buttonsgin__icon {
+  display: inline-block;
+  transform: translateX(0);
+  transition: transform .25s ease;
+}
+.buttonsgin:hover .buttonsgin__icon,
+.buttonsgin:focus-visible .buttonsgin__icon {
+  transform: translateX(4px);
+}
+
+.signspan{
+    color: white;
+    cursor: pointer;
+}
+
+.linksign{
+    color: white;
+    text-decoration: none;
+}
+.error-message{
+    color: red;
+}
+
+.forgotpassworddiv{
+    display: flex;
+    align-items: self-end;
+    justify-content: right;
+    cursor: pointer;
+}
+
+.forgotpassword{
+    margin-right: 20px;
+    color: rgb(234, 234, 241);
+    margin-bottom: 10px;
+    text-decoration: none;
+    
+}
+
+.horicss {
+  border: 0;
+  height: 1px;                 /* thin line */
+  margin: 16px 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+}
+
+.dividerline {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #fff; /* text color */
+  margin: 20px 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.dividerline::before,
+.dividerline::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* line color */
+}
+
+.dividerline span {
+  padding: 0 10px;
+  background-color: #3b0764; /* form background color (adjust to match your card) */
+  border-radius: 4px;
+}
+
+.imagegen{
+    width: 100px;
+    height: 100px;
+}
+
+.lucide {
+  stroke: #ffffff !important;
+}

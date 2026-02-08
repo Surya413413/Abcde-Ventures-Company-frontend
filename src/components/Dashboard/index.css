@@ -1,0 +1,70 @@
+.dashboard-container {
+  min-height: 100vh;
+  background: #f7f9fc;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4f46e5;
+  color: white;
+  padding: 15px 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.logout-btn {
+  background: #ef4444;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 40px;
+}
+
+.profile-card,
+.links-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.profile-card h2,
+.links-card h2 {
+  margin-bottom: 15px;
+  color: #1e293b;
+}
+
+.links-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links-card li {
+  margin-bottom: 10px;
+}
+
+.links-card a {
+  text-decoration: none;
+  color: #4f46e5;
+  font-weight: 500;
+}
+
+.links-card a:hover {
+  text-decoration: underline;
+}
