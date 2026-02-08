@@ -1,70 +1,226 @@
-# Getting Started with Create React App
+ABCDE Ventures – Frontend (React)
+### Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend application for the ABCDE Ventures Shopping Cart System.
+It provides a complete user flow for an e-commerce experience:
 
-## Available Scripts
+Login → View Products → Add to Cart → Checkout → Order Confirmation
 
-In the project directory, you can run:
+The application is built using React and communicates with an external API for authentication, items, cart, and orders.
 
-### `npm start`
+### Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+React 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+React Router v6
 
-### `npm test`
+Context API (Global Cart State)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+JavaScript (ES6+)
 
-### `npm run build`
+CSS (Custom Styling + Gradients)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Lucide React (Icons)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+react-icons
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+reactjs-popup
 
-### `npm run eject`
+react-loader-spinner
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+js-cookie
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Project Structure
+src/
+├── components/
+│   ├── Loginpage/
+│   ├── Registerpage/
+│   ├── Home/
+│   ├── Products/
+│   ├── ProductItemDetails/
+│   ├── Cart/
+│   ├── CartSummary/
+│   ├── PaymentPage/
+│   ├── Header/
+│   ├── ProtectedRoute/
+│   └── NotFound/
+│
+├── context/
+│   └── CartContext.js
+│
+├── App.js
+├── main.jsx
+└── index.css
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Authentication Flow
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Users log in using email/username and password
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+On successful login:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+A token is stored in cookies
 
-### Code Splitting
+User is redirected to the Home page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+On failure:
 
-### Analyzing the Bundle Size
+An alert or error message is shown
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Single-Device Login Handling
 
-### Making a Progressive Web App
+If a user is already logged in on another device
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Login is blocked
 
-### Advanced Configuration
+UI shows a message like:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+You cannot login on another device
 
-### Deployment
+### Application Routing
+Public Routes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+/login
 
-### `npm run build` fails to minify
+/register
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+/forgotpassword
+
+Protected Routes
+
+/home
+
+/products
+
+/products/:id
+
+/cart
+
+Protected routes are guarded using a ProtectedRoute component.
+If no token is found, the user is redirected to the login page.
+
+### Home Page
+
+Welcome screen after login
+
+Entry point to browse products
+
+Includes navigation header
+
+### Products Listing
+
+Displays all available products
+
+Each product card shows:
+
+Image
+
+Name
+
+Brand
+
+Price
+
+Rating
+
+Clicking a product:
+
+Opens product details page
+
+Allows adding product to cart
+
+### Product Details Page
+
+Shows complete product information
+
+Quantity selector (+ / -)
+
+Add to Cart button
+
+Displays similar products section
+
+#### Cart Functionality
+
+Cart state is managed using React Context
+
+Features:
+
+Add items
+
+Increase / decrease quantity
+
+Remove item
+
+Remove all items
+
+Cart Summary
+
+Displays:
+
+Total items
+
+Total price
+
+Checkout button opens a payment modal
+
+### Checkout & Payment
+
+Checkout opens a modal using reactjs-popup
+
+Payment methods displayed:
+
+Card (disabled)
+
+Net Banking (disabled)
+
+UPI (disabled)
+
+### Cash on Delivery (enabled)
+
+Wallet (disabled)
+
+Order Confirmation
+
+On clicking Confirm Order:
+
+Order is placed
+
+Cart is cleared
+
+Success message is shown:
+
+Your order has been placed successfully
+
+### Token Handling
+
+Tokens are stored using js-cookie
+
+Automatically attached to protected API requests
+
+Token is removed on logout
+
+### UI & Styling
+
+Fully responsive design
+
+Mobile-friendly layouts
+
+Modern gradients and shadows
+
+Clean, professional UI
+
+Custom CSS only (no UI libraries)
+
+### Running the Frontend Locally
+Install Dependencies
+npm install
+
+Start Development Server
+npm run dev
+
+repository:  https://github.com/Surya413413/Abcde-Ventures-Company-frontend.git
+
+
+Application runs at:
+
+http://localhost:3001
