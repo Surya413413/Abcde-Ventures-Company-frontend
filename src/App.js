@@ -1,10 +1,10 @@
 import {Component} from 'react'
-import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 import Loginpage from './components/Loginpage'
 import Home from './components/Home'  
 import Registerpage from './components/Registerpage'
-import Dashboard from './components/Dashboard'
+
 import Forgotpassword from './components/Forgotpassword'
 import Products from './components/Products'
 import ProductItemDetails from './components/ProductItemDetails'
