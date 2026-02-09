@@ -34,7 +34,7 @@ render(){
         <div className="form-card" >
    
     <div className="">
-   <img src="/abcdeforgotpassword.jpg" className="imagegen"/>
+   <img src="/abcdeforgotpassword.jpg" alt="Forgot password illustration" className="imagegen"/>
     </div> 
         <h1>Forgot Password?</h1>
         <p>No worries! Enter your email address and we'll send you a link to reset your password.</p>

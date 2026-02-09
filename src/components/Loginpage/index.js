@@ -6,9 +6,9 @@ import { Component } from "react"
 
 import Cookies from "js-cookie";
 import {Link} from "react-router-dom"
-import { Eye, EyeOff, Mail, Lock, User, ArrowRight, Github, Chrome } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, Github, Chrome } from 'lucide-react';
 import "./index.css"
-import { Navigate, redirect, useNavigate } from "react-router-dom";
+import { Navigate} from "react-router-dom";
 class Loginpage extends Component {
 state = {email:"",password:"",showSubmitError:false,errorMsg:"",redirect:false}
 
@@ -130,7 +130,7 @@ render(){
         <div className="form-card" >
    
     <div className="">
-   <img src="/abcdeloginlogo.jpg" className="imagegen"/>
+   <img src="/abcdeloginlogo.jpg" alt="Login illustration" className="imagegen"/>
     </div> 
         <h1>Welcome Back</h1>
         <p>Sign in to your account</p>
