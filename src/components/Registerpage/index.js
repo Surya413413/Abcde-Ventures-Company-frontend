@@ -3,7 +3,7 @@ import { Component } from "react"
 
 
 import {Link} from "react-router-dom"
-import { Eye, EyeOff, Mail, Lock, User, ArrowRight, Github, Chrome } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, Github, Chrome } from 'lucide-react';
 import "./index.css"
 // import { Navigate, redirect, useNavigate } from "react-router-dom";
 class Registerpage extends Component {
@@ -191,7 +191,7 @@ render(){
         <div className="form-card" >
    
     <div className="">
-   <img src="/abcderegisterllogo.jpg" className="imagegen"/>
+   <img src="/abcderegisterllogo.jpg" alt="Register illustration" className="imagegen"/>
     </div> 
         <h1>Create Account</h1>
         <p>Join us today and get started</p>

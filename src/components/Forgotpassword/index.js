@@ -27,7 +27,7 @@ renderemailfiled = () => {
 }
 
 render(){
-    const {redirect} = this.state
+    // const {redirect} = this.state
    
 
  return (
