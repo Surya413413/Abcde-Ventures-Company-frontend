@@ -2,9 +2,9 @@
 import { Component } from "react"
 
 import {Link} from "react-router-dom"
-import { Mail, Lock, User, ArrowRight } from 'lucide-react';
+import { Mail} from 'lucide-react';
 import "./index.css"
-import { Navigate, redirect, useNavigate } from "react-router-dom";
+// import { Navigate, redirect, useNavigate } from "react-router-dom";
 class Forgotpassword extends Component {
 state = {email:"",redirect:false}
 

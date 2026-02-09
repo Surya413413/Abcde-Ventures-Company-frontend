@@ -5,7 +5,7 @@ import { Component } from "react"
 import {Link} from "react-router-dom"
 import { Eye, EyeOff, Mail, Lock, User, ArrowRight, Github, Chrome } from 'lucide-react';
 import "./index.css"
-import { Navigate, redirect, useNavigate } from "react-router-dom";
+// import { Navigate, redirect, useNavigate } from "react-router-dom";
 class Registerpage extends Component {
  state = {
     name: "",

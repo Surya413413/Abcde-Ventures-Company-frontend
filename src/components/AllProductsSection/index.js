@@ -55,10 +55,10 @@ class AllProductsSection extends Component {
   state = {
     productsList: [],
     apiStatus: apiStatusConstants.initial,
-    activeOptionId: sortbyOptions[0].optionId,
-    activeCategoryId: '',
-    searchInput: '',
-    activeRatingId: '',
+    // activeOptionId: sortbyOptions[0].optionId,
+    // activeCategoryId: '',
+    // searchInput: '',
+    // activeRatingId: '',
   }
 
   componentDidMount() {
